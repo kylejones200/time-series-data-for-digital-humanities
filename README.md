@@ -1,7 +1,7 @@
 # Time Series Data for Digital Humanities
 
-**Published:** 2025-02-15
-**Medium:** [https://medium.com/@kyle-t-jones/time-series-data-for-digital-humanities-6a8a3270ecda](https://medium.com/@kyle-t-jones/time-series-data-for-digital-humanities-6a8a3270ecda)
+Published: 2025-02-15
+Medium: [https://medium.com/@kyle-t-jones/time-series-data-for-digital-humanities-6a8a3270ecda](https://medium.com/@kyle-t-jones/time-series-data-for-digital-humanities-6a8a3270ecda)
 
 ## About
 
