@@ -5,8 +5,6 @@
 
 from google_pygram import GooglePyGram as gpg
 import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
-import pandas as pd
 
 word_list = ["democracy", "liberty", "freedom", "equality", "capitalism"]
 start_year = 1800
