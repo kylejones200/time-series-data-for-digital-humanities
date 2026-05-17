@@ -43,7 +43,7 @@ def update(year):
     ax.set_title(f"Rolling Correlation Matrix - Year: {year.year}")
 
 
-def main() -> None:
+def notebook_step_002() -> None:
     df = pd.read_csv("data/Combined_sentiment 1840-1963.csv")
 
     df.drop("Unnamed: 0", axis=1, inplace=True)
@@ -54,8 +54,12 @@ def main() -> None:
 
     df.set_index("year", inplace=True)
 
+
+def notebook_step_003() -> None:
     df.head()
 
+
+def plot_the_data() -> None:
     topics = df["Topic"].unique()
 
     colors = plt.get_cmap("tab10", len(topics))
@@ -86,6 +90,8 @@ def main() -> None:
 
     plt.show()
 
+
+def apply_a_rolling_mean_to_smooth_the_lines_adjust() -> None:
     df["composite_smooth"] = df.groupby("Topic")["composite"].transform(
         lambda x: x.rolling(window=20, min_periods=1).mean()
     )
@@ -121,6 +127,8 @@ def main() -> None:
 
     plt.show()
 
+
+def prepare_for_anomaly_detection() -> None:
     df["anomaly"] = False
 
     iso_forest = IsolationForest(contamination=0.05, random_state=42)
@@ -175,12 +183,16 @@ def main() -> None:
 
     plt.show()
 
+
+def pivot_the_data_to_get_topics_as_columns() -> None:
     df_pivot = df.pivot_table(index="year", columns="Topic", values="composite")
 
     rolling_corr = df_pivot.rolling(window=10, min_periods=5).corr()
 
     years = rolling_corr.index.get_level_values(0).unique()
 
+
+def pivot_the_data_to_get_topics_as_columns_2() -> None:
     df_pivot = df.pivot_table(index="year", columns="Topic", values="composite")
 
     rolling_corr = df_pivot.rolling(window=10, min_periods=5).corr()
@@ -195,6 +207,8 @@ def main() -> None:
 
     print("GIF saved as 'rolling_correlation.gif'")
 
+
+def pivot_the_data_to_get_topics_as_columns_3() -> None:
     df_pivot = df.pivot_table(index="year", columns="Topic", values="composite")
 
     rolling_corr = df_pivot.rolling(window=10, min_periods=5).corr()
@@ -211,6 +225,8 @@ def main() -> None:
 
     print("GIF saved as 'rolling_correlation.gif'")
 
+
+def pivot_the_data_to_get_topics_as_columns_4() -> None:
     df_pivot = df.pivot_table(index="year", columns="Topic", values="composite")
 
     rolling_corr = df_pivot.rolling(window=10, min_periods=5).corr()
@@ -229,6 +245,8 @@ def main() -> None:
 
     print("GIF saved as 'rolling_correlation.gif'")
 
+
+def pivot_the_data_so_each_topic_is_a_separate_colum() -> None:
     df_pivot = df.pivot_table(index="year", columns="Topic", values="composite")
 
     plt.figure(figsize=(12, 6))
@@ -252,6 +270,8 @@ def main() -> None:
 
     plt.show()
 
+
+def pivot_the_data_so_each_topic_is_a_separate_colum_2() -> None:
     df_pivot = df.pivot_table(index="year", columns="Topic", values="composite")
 
     rolling_corr = df_pivot.rolling(window=10, min_periods=5).corr(pairwise=True)
@@ -290,8 +310,12 @@ def main() -> None:
 
     plt.show()
 
+
+def notebook_step_014() -> None:
     corr_df.head(10)
 
+
+def drop_nan_values_from_the_correlation_dataset() -> None:
     df_corr = corr_df.dropna().copy()
 
     X = sm.add_constant(df_corr.index.year)
@@ -304,6 +328,8 @@ def main() -> None:
 
     print(regression_summary)
 
+
+def drop_nan_values() -> None:
     df_corr = corr_df.dropna().copy()
 
     mean_corr = df_corr["Mean_Correlation"].mean()
@@ -349,6 +375,8 @@ def main() -> None:
 
     plt.show()
 
+
+def example_usage() -> None:
     words = ["economy", "equality", "democracy", "freedom", "justice", "liberty"]
 
     start_year = 1850
@@ -374,6 +402,24 @@ def main() -> None:
     plt.savefig("ngram_trends.png")
 
     plt.show()
+
+
+def main() -> None:
+    notebook_step_002()
+    notebook_step_003()
+    plot_the_data()
+    apply_a_rolling_mean_to_smooth_the_lines_adjust()
+    prepare_for_anomaly_detection()
+    pivot_the_data_to_get_topics_as_columns()
+    pivot_the_data_to_get_topics_as_columns_2()
+    pivot_the_data_to_get_topics_as_columns_3()
+    pivot_the_data_to_get_topics_as_columns_4()
+    pivot_the_data_so_each_topic_is_a_separate_colum()
+    pivot_the_data_so_each_topic_is_a_separate_colum_2()
+    notebook_step_014()
+    drop_nan_values_from_the_correlation_dataset()
+    drop_nan_values()
+    example_usage()
 
 
 if __name__ == "__main__":

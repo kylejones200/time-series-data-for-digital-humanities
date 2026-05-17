@@ -38,7 +38,7 @@ def update(frame):
     )
 
 
-def main() -> None:
+def install_necessary_packages_run_this_only_if_you() -> None:
     file_path = "Wide_Sentiment_Data.csv"
 
     df = pd.read_csv(file_path)
@@ -78,6 +78,8 @@ def main() -> None:
 
     print("Copula results saved as 'copula_dependency_metrics.csv'.")
 
+
+def install_necessary_packages_if_needed() -> None:
     file_path = "Wide_Sentiment_Data.csv"
 
     df = pd.read_csv(file_path)
@@ -156,6 +158,8 @@ def main() -> None:
         "Results saved as 'copula_clayton_dependency_by_decade.csv' and 'copula_gumbel_dependency_by_decade.csv'."
     )
 
+
+def install_necessary_packages_if_needed_2() -> None:
     file_path = "Wide_Sentiment_Data.csv"
 
     df = pd.read_csv(file_path)
@@ -247,8 +251,12 @@ def main() -> None:
         "Results saved as 'copula_clayton_dependency_by_real_years.csv' and 'copula_gumbel_dependency_by_real_years.csv'."
     )
 
+
+def notebook_step_004() -> None:
     df.head()
 
+
+def install_necessary_packages_run_if_needed() -> None:
     file_path = "Wide_Sentiment_Data.csv"
 
     df = pd.read_csv(file_path)
@@ -303,6 +311,8 @@ def main() -> None:
         "Results saved as 'spearman_regime_switching.png' and 'spearman_structural_breaks.csv'."
     )
 
+
+def install_necessary_packages_run_if_needed_2() -> None:
     file_path = "Wide_Sentiment_Data.csv"
 
     df = pd.read_csv(file_path)
@@ -362,6 +372,8 @@ def main() -> None:
         "Results saved as 'spearman_regime_switching.png' and 'spearman_structural_breaks.csv'."
     )
 
+
+def install_necessary_packages_run_if_needed_3() -> None:
     rolling_kendall_10 = rolling_correlation(df_selected, method="kendall", window=10)
 
     rolling_kendall_np = rolling_kendall_10.dropna().values
@@ -417,6 +429,8 @@ def main() -> None:
         "Results saved as 'kendall_regime_switching.png' and 'kendall_structural_breaks.csv'."
     )
 
+
+def select_relevant_topics_for_joint_distribution_an() -> None:
     selected_topics = ["Economy", "Freedom", "gdp_percap", "Democracy"]
 
     df_selected = df[selected_topics].apply(pd.to_numeric, errors="coerce")
@@ -442,6 +456,17 @@ def main() -> None:
     ani.save(animation_path, writer="pil", fps=1)
 
     print(f"Animation saved at: {animation_path}")
+
+
+def main() -> None:
+    install_necessary_packages_run_this_only_if_you()
+    install_necessary_packages_if_needed()
+    install_necessary_packages_if_needed_2()
+    notebook_step_004()
+    install_necessary_packages_run_if_needed()
+    install_necessary_packages_run_if_needed_2()
+    install_necessary_packages_run_if_needed_3()
+    select_relevant_topics_for_joint_distribution_an()
 
 
 if __name__ == "__main__":
