@@ -11,14 +11,7 @@ A time series is a sequence of data points collected over time. The order of the
 
 Time series data appears in different forms. Some datasets are structured, such as population counts, economic growth, or CO₂ levels. Other data, such as language, sentiment, or cultural trends, require processing before analysis. Word frequency in books, newspapers, or movies changes over time and reveals deeper patterns in public discourse. Sentiment analysis tracks whether discussions around a concept, such as democracy, grow more positive or negative.
 
-## About
 
-Place the code for this article in this repository.
-The original article export is saved as `article.md`.
-
-## Files
-
-Add your `.ipynb`, `.py`, `.yaml`, `.js`, `.ts`, or other project files here.
 
 ## Disclaimer
 
